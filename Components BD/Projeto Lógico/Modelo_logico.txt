@@ -1,0 +1,53 @@
+Modelo Lógico - Biblioteca
+
+Entidades Principais:
+
+1. Usuário de Cadastro (registerUser)
+
+   Atributos:
+   - ID_Usuário (Chave Primária)
+   - Nome Completo
+   - Nome Social
+   - Telefone
+   - E-mail
+   - Nome da Rua
+   - Número Residencial
+   - Logradouro
+   - Cidade
+   - Estado
+   - CEP
+
+2. Status de Livros (statusBooks)
+
+   Atributos:
+   - ID_StatusLivro (Chave Primária)
+   - Tipo
+
+3. Livro Registrado (registerBooks)
+
+   Atributos:
+   - ID_Livro (Chave Primária)
+   - Título do Livro
+   - Editora
+   - Ano de Publicação
+   - Gênero
+   - ISBN
+   - ID_Usuário (Chave Estrangeira referenciando registerUser)
+   - ID_StatusLivro (Chave Estrangeira referenciando statusBooks)
+
+   Relacionamentos:
+   - Um Livro pertence a um Usuário (1:N)
+   - Um Livro tem um Status de Livro associado (1:N)
+
+4. Reservas de Livros (reservsBooks)
+
+   Atributos:
+   - ID_ReservaLivro (Chave Primária)
+   - Lista de Reserva
+   - Data da Reserva
+   - ID_Usuário (Chave Estrangeira referenciando registerUser)
+   - ID_Livro (Chave Estrangeira referenciando registerBooks)
+
+   Relacionamentos:
+   - Uma Reserva de Livro pertence a um Usuário (1:N)
+   - Uma Reserva de Livro está associada a um Livro registrado na biblioteca (1:N)

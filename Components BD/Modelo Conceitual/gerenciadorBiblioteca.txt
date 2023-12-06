@@ -1,0 +1,26 @@
+// Define as entidades e seus atributos
+[Usuário|
+  Nome Completo: string
+  Nome Social: string
+  Telefone: string
+  Endereço: string
+  E-mail: string
+]
+
+[Livro|
+  Título: string
+  Autor(es): string
+  Editora: string
+  Ano de Publicação: int
+  Número de Páginas: int
+  Gênero: string
+  ISBN: string
+]
+
+[Reserva|
+  Data da Reserva: date
+]
+
+// Relaciona as entidades
+[Usuário] -<> [Reserva]
+[Livro] -[Status do Livro]-<> [Reserva]

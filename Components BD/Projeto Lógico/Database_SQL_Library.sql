@@ -2,7 +2,7 @@ CREATE DATABASE library;
 USE library;
 
 CREATE TABLE registerUser (
-    cadUser_id INT NOT NULL PRIMARY KEY UNIQUE AUTO_INCREMENT,
+    cadUser_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     cadUser_nomeCompleto VARCHAR(50),
     cadUser_nomeSocial VARCHAR(50),
     cadUser_telefone CHAR(11),
@@ -16,12 +16,12 @@ CREATE TABLE registerUser (
 );
 
 CREATE TABLE statusBooks (
-    statusBooks_id INT NOT NULL PRIMARY KEY UNIQUE AUTO_INCREMENT,
+    statusBooks_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     tipo VARCHAR(50)
 );
 
 CREATE TABLE registerBooks (
-    cadBooks_id INT NOT NULL PRIMARY KEY UNIQUE AUTO_INCREMENT,
+    cadBooks_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     cadBooks_tituloLivro VARCHAR(50),
     cadBooks_editora VARCHAR(50),
     cadBooks_anoPublicacao DATE,
@@ -34,7 +34,7 @@ CREATE TABLE registerBooks (
 );
 
 CREATE TABLE reservsBooks (
-    reservsBooks_id INT NOT NULL PRIMARY KEY UNIQUE AUTO_INCREMENT,
+    reservsBooks_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     reservsBooks_listaReserva INT,
     reservsBooks_dataReserva DATE,
     cadUser_id INT NOT NULL,
@@ -54,7 +54,6 @@ INSERT INTO registerUser (cadUser_nomeCompleto, cadUser_telefone, cadUser_email,
 VALUES ('Carlos Oliveira', '11122233344', 'carlos@email.com', 'Rua C', '789', 'Logradouro C', 'Cidade C', 'MG', '98765432');
 
 SELECT * FROM registerUser;
---
 
 -- Registro de Livros
 INSERT INTO registerBooks (cadBooks_tituloLivro, cadBooks_editora, cadBooks_anoPublicacao, cadBooks_genero, cadBooks_ISBN, cadUser_id, statusBooks_id)
@@ -67,9 +66,8 @@ INSERT INTO registerBooks (cadBooks_tituloLivro, cadBooks_editora, cadBooks_anoP
 VALUES ('1984', 'Editora DEF', '2018-12-10', 'Ficção Científica', '978-0-452-28423-4', 3, 2);
 
 SELECT * FROM registerBooks;
---
 
--- Reserva de livros 
+-- Reserva de livros
 INSERT INTO reservsBooks (reservsBooks_listaReserva, reservsBooks_dataReserva, cadUser_id, cadBooks_id)
 VALUES (1, '2022-02-01', 1, 1);
 
@@ -77,7 +75,6 @@ INSERT INTO reservsBooks (reservsBooks_listaReserva, reservsBooks_dataReserva, c
 VALUES (2, '2023-12-01', 2, 3);
 
 SELECT * FROM reservsBooks;
---
 
 -- Status do Livro
 INSERT INTO statusBooks(tipo) VALUES ("Disponivel");
@@ -85,7 +82,7 @@ INSERT INTO statusBooks(tipo) VALUES ("Indisponivel");
 INSERT INTO statusBooks(tipo) VALUES ("Emprestado");
 SELECT * FROM statusBooks;
 
--- 
+--
 
 DELIMITER //
 -- Consulta de Registro de Livros
@@ -109,13 +106,4 @@ BEGIN
         reservsBooks ON registerBooks.cadBooks_id = reservsBooks.cadBooks_id;
 END //
 
-
 DELIMITER ;
-
-
-
-
-
-
-
-

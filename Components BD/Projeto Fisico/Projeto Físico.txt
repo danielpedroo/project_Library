@@ -1,0 +1,29 @@
+4. Projeto Físico
+4.1 Estrutura do Banco de Dados
+Tipo de Banco de Dados: Neste caso, um banco de dados relacional parece ser a escolha apropriada. 
+As relações entre as entidades (tabelas) são claramente definidas por meio de chaves estrangeiras,
+e as consultas típicas, como aquelas realizadas na procedure register_the_Books, são bem atendidas por bancos de dados relacionais.
+ 
+Justificativa: Consistência de Dados: Bancos de dados relacionais garantem a integridade referencial, 
+garantindo que as relações entre as tabelas sejam consistentes.
+
+Consulta SQL Estruturada: A modelagem relacional é bem adequada para consultas SQL, proporcionando 
+flexibilidade e poder nas operações de leitura.
+ 
+Estratégias de Particionamento e Armazenamento: Considerando a natureza do sistema, onde não há
+evidências de requisitos massivos de leitura ou gravação, e o conjunto de dados não parece ser extremamente grande, a 
+estratégia de particionamento pode não ser crítica neste estágio. Manter uma estrutura simples pode ser mais eficiente.
+ 
+Armazenamento: Utilize estratégias padrão de armazenamento oferecidas pelo banco de dados relacional escolhido.
+Garanta que os índices sejam definidos adequadamente para otimizar as consultas frequentes.
+ 
+Backup e Recuperação: Implemente um plano de backup regular para garantir a segurança dos dados.
+ 
+4.2 Implementação do Esquema
+Scripts de Criação de Tabelas e Índices: Os scripts fornecidos para a criação de tabelas parecem adequados. 
+No entanto, para otimizar a eficiência e a escalabilidade, considere adicionar índices em colunas frequentemente utilizadas em condições de busca.
+ 
+O procedimento armazenado register_the_Books já está implementado para fornecer uma visão consolidada das
+informações de livros e reservas. Se houver necessidade de funcionalidades adicionais ou processamento de dados complexos, 
+considere adicionar mais procedimentos armazenados ou funções conforme necessário. Certifique-se de documentar adequadamente esses componentes
+para futuras manutenções.

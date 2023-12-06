@@ -1,0 +1,48 @@
+1. Análise de Requisitos
+
+1.1 Minimundo
+
+1.1.1 Descrição Contextual:
+O sistema de gerenciamento de biblioteca visa otimizar a 
+gestão de livros em uma instituição. O ambiente inclui usuários que podem ser clientes da biblioteca, 
+processos atuais de cadastro de usuários, livros e reservas, bem como a necessidade de resolver problemas 
+relacionados à disponibilidade e reserva de livros.
+
+1.1.2 Identificação de Entidades e Relações:
+- Entidades Principais: Usuário, Livro, Reserva.
+- Atributos de Usuário: Nome Completo, Nome Social, Telefone, Endereço, E-mail.
+- Atributos de Livro: Título, Autor(es), Editora, Ano de Publicação, Número de Páginas, Gênero, ISBN.
+- Relações: Usuário pode ter N Livros; Livro pode ter N Reservas.
+
+1.2 Requisitos
+
+1.2.1 Requisitos Funcionais:
+1. Cadastro de Usuários:
+   - O sistema deve permitir a inclusão de novos usuários com informações como nome completo, nome social, telefone, endereço e e-mail.
+
+2. Cadastro de Livros:
+   - O sistema deve permitir a catalogação de livros, incluindo título, autor(es), editora, ano de publicação, número de páginas, gênero e ISBN.
+   - Deve haver um controle de disponibilidade e status do livro (disponível, emprestado, reservado).
+   - O sistema deve manter uma lista de reservas associadas a cada livro, incluindo a data da reserva.
+
+3. Associação entre Usuários e Livros:
+   - Cada usuário cadastrado pode associar-se a um ou mais livros.
+   - Um livro pode ter um dos três status: disponível, emprestado ou reservado.
+   - Usuários podem reservar livros disponíveis ou marcar reservas para uma data futura.
+
+4. Controle de Status do Livro:
+   - O sistema deve manter um registro atualizado do status de cada livro.
+
+1.2.2 Requisitos Não Funcionais:
+1. Desempenho:
+   - O sistema deve suportar um grande número de usuários e livros sem comprometer o desempenho.
+
+2. Segurança:
+   - O acesso ao sistema deve ser restrito a usuários autorizados.
+   - Dados sensíveis, como informações pessoais dos usuários, devem ser protegidos.
+
+3. Usabilidade:
+   - A interface do sistema deve ser intuitiva e fácil de usar para diferentes perfis de usuários.
+
+Essa análise incorpora os elementos do Minimundo e expande os Requisitos Funcionais e Não Funcionais, 
+proporcionando uma visão abrangente do sistema de gerenciamento de biblioteca, desde o contexto até as funcionalidades e critérios não funcionais.
